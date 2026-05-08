@@ -123,6 +123,10 @@ GenAVB_TSN-rtos-apps/
 
 ## Build Instructions
 
+For MCUXpresso VS Code setup, the Windows SDK integration script, and the
+`release_hybrid` CMake preset needed for IDE builds, see
+[MCUXpresso VS Code Setup](docs/vscode_mcuxpresso_setup.md).
+
 ### Automated Setup
 
 The bootstrap scripts automate the entire setup process including workspace initialization, toolchain download, symbolic links creation, and Python environment setup.
