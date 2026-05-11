@@ -32,6 +32,16 @@ while keeping the authoritative source in this repository. Re-run the setup
 script after adding or removing files under `boards\src\demo_apps\avb_tsn` or
 `boards\<board>\demo_apps\avb_tsn`, because new files need new hardlinks.
 
+To check that the SDK mirror still points at the same hardlinked files, run:
+
+```cmd
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts\verify_mcuxpresso_sdk_example_hardlinks.ps1 -SdkDir <mcux-workspace>\mcuxsdk -RepoDir <GenAVB_TSN-rtos-apps>
+```
+
+The verifier checks every source file in this repository against its SDK mirror
+path. Add `-Strict` if you also want it to report extra generated files under the
+SDK mirror.
+
 ## Desired Command-Line Build
 
 Build from the MCUXpresso SDK root, not from this repository:
