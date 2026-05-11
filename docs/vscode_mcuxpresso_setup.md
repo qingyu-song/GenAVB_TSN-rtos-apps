@@ -92,7 +92,7 @@ Add this entry to `configurePresets`:
     "WEST": "TRUE",
     "board": "evkmimxrt1180",
     "core_id": "cm33",
-    "CONF_FILE": "examples/_boards/evkmimxrt1180/demo_apps/avb_tsn/tsn_app/cm33/prj_hybrid.conf"
+    "CONF_FILE": "${fileDir}/../../../_boards/evkmimxrt1180/demo_apps/avb_tsn/tsn_app/cm33/prj_hybrid.conf"
   }
 }
 ```
@@ -115,3 +115,7 @@ The generated preset file is local SDK/IDE state. Do not treat it as the source
 of truth for the GenAVB/TSN application. The source of truth for the hybrid mode
 is `boards\evkmimxrt1180\demo_apps\avb_tsn\tsn_app\cm33\prj_hybrid.conf` in
 this repository.
+
+Use the SDK-root-relative `CONF_FILE` path in `west build` commands. Use the
+`${fileDir}` form in `CMakePresets.json`, because VS Code configures from the
+example directory and CMake also hashes the file path during Kconfig processing.
